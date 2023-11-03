@@ -20,7 +20,7 @@ router.get('/profilePlaceholder/:username', auth, async (req, res) => {
   }
 });
 
-router.get('/gamePlaceholder/:id', auth, async (req, res) => {
+router.get('/gamePlaceholder/:id', async (req, res) => {
   try {
       
   } catch (err) {
@@ -29,7 +29,7 @@ router.get('/gamePlaceholder/:id', auth, async (req, res) => {
   }
 });
 
-router.get('/searchPlaceholder/:input', auth, async (req, res) => {
+router.get('/searchPlaceholder/:input', async (req, res) => {
   try {
       
   } catch (err) {
