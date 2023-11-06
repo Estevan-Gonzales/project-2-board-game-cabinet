@@ -1,1 +1,15 @@
-<section></section>
+<section>
+    <div>
+    <input type="text" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Search For Board Games">
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+    Search
+    </button>
+    </div>
+</section>
+
+<section class="flex-row justify-center">
+    <h2>Top 5 Games</h2>
+    {{#each games as |game|}}
+    {{> game-card}}
+    {{/each}}
+</section>
