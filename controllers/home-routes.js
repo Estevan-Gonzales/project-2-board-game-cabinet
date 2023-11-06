@@ -1,11 +1,14 @@
 const router = require('express').Router();
-const { profilePlaceholder, gamePlaceholder, searchPlaceholder } = require('../models');
+//const { profilePlaceholder, gamePlaceholder, searchPlaceholder } = require('../models');
 const auth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
    //limit top 5
-   //render just the top 5
+   //render just the top 5 
+   res.render('homepage', {
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { homePlaceholder, profilePlaceholder, reviewPlaceholder, likesPlaceholder } = require('../models');
+//const { homePlaceholder, profilePlaceholder, reviewPlaceholder, likesPlaceholder } = require('../models');
 const auth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
