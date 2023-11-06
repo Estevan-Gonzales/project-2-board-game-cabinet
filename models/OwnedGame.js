@@ -10,7 +10,7 @@ OwnedGame.init(
       allowNull: false,
       primaryKey: true,
       references: {
-        model: 'Game',
+        model: 'Games',
         key: 'game_id'
       }
     },
@@ -37,7 +37,7 @@ OwnedGame.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user'
+    modelName: 'ownedgame'
   }
 );
 

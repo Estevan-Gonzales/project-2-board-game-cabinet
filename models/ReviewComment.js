@@ -22,7 +22,7 @@ ReviewComment.init(
     },
 
     review_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Review',
@@ -37,7 +37,7 @@ ReviewComment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user'
+    modelName: 'reviewcomment'
   }
 );
 

@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Game extends Model {}
+class Games extends Model {}
 
-Game.init(
+Games.init(
   {
     game_rank: {
       type: DataTypes.INTEGER,
@@ -46,7 +46,7 @@ Game.init(
         type: DataTypes.INTEGER,
         allowNull: true
     },
-    average_rating: {
+    avg_rating: {
         type: DataTypes.FLOAT,
         allowNull: true
     },
@@ -92,8 +92,8 @@ Game.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user'
+    modelName: 'games'
   }
 );
 
-module.exports = Game;
+module.exports = Games;
