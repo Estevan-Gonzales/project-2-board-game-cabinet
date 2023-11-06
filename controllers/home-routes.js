@@ -5,7 +5,9 @@ const auth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    res.render('homepage', {
+   //limit top 5
+   //render just the top 5 
+   res.render('homepage', {
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {

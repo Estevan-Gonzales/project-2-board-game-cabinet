@@ -1,0 +1,20 @@
+{{> game-card}}
+<section>
+    <div>
+        <form>
+            <label>Leave a Review:</label>
+            <input<input type="text" placeholder="Leave a Review">>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            Submit
+            </button>
+        </form>
+    </div>
+    <div>
+       {{#each reviews as |review|}}
+        {{> review-card}}
+        {{/each}}
+    </div>
+    <div>
+        <a href="/reviews"><button>See All Reviews</button></a>
+    </div>
+</section>
