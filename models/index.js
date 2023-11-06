@@ -1,4 +1,4 @@
-const Game = require('./Game');
+const Games = require('./Games');
 const OwnedGame = require('./OwnedGame');
 const Review = require('./Review');
 const User = require('./User');
@@ -9,7 +9,7 @@ const ReviewComment = require('./ReviewComment')
 User.hasMany(OwnedGame, {
     foreignKey: 'username'
 });
-OwnedGame.belongsto(User, {
+OwnedGame.belongsTo(User, {
     foreignKey: 'username'
 });
 //--------------------------------
@@ -20,17 +20,17 @@ Review.belongsTo(User, {
     foreignKey: 'review_id'
 });
 //--------------------------------
-OwnedGame.hasOne(Game, {
+OwnedGame.hasOne(Games, {
     foreignKey: 'game_id'
 });
-Game.belongsTo(OwnedGame, {
+Games.belongsTo(OwnedGame, {
     foreignKey: 'game_id'
 });
 //--------------------------------
-Game.hasMany(Review, {
+Games.hasMany(Review, {
     foreignKey: 'review_id',
 });
-Review.belongsTo(Game, {
+Review.belongsTo(Games, {
     foreignKey: 'review_id'
 });
 //--------------------------------
@@ -48,4 +48,4 @@ ReviewComment.belongsTo(User, {
     foreignKey: 'comment_id'
 })
 
-module.exports = {Game, OwnedGame, Review, ReviewComment, User}
+module.exports = {Games, OwnedGame, Review, ReviewComment, User}

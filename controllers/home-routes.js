@@ -1,5 +1,6 @@
 const router = require('express').Router();
-//const { profilePlaceholder, gamePlaceholder, searchPlaceholder } = require('../models');
+const sequelize = require('../config/connection');
+const { Games } = require('../models');
 const auth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -13,7 +14,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/profilePlaceholder/:username', auth, async (req, res) => {
+router.get('/user/:username', auth, async (req, res) => {
   try {
       
   } catch (err) {
@@ -22,16 +23,18 @@ router.get('/profilePlaceholder/:username', auth, async (req, res) => {
   }
 });
 
-router.get('/gamePlaceholder/:id', async (req, res) => {
+router.get('/game/:game_id', async (req, res) => {
   try {
-      
+    const gameData = await Games.findOne({game_id: req.params.game_id});
+    //sequelize.literal(`(SELECT names FROM games WHERE games.game_id = ${req.params.game_id}`);
+    res.status(200).json(gameData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-router.get('/searchPlaceholder/:input', async (req, res) => {
+router.get('/search/:input', async (req, res) => {
   try {
       
   } catch (err) {
