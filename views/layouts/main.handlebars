@@ -4,14 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Boardgame Cabinet</title>
+  <title>My Board Game Cabinet</title>
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
   <header>
-    <h1>Welcome to My Boardgame Cabinet</h1>
+    <h1>My Board Game Cabinet</h1>
   </header>
   <nav>
     <a href="/">Home</a>
@@ -22,16 +22,8 @@
     {{/if}}
   </nav>
   <main>
-    <aside>
-      <h2>Top 5 Boardgames</h2>
-    </aside>
-    <div class="gallery">
-      {{{body}}}
-    </div>
+    {{{body}}}
   </main>
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+  </body>
 
-</html>
+  </html>
