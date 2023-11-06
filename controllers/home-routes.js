@@ -4,7 +4,8 @@ const auth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-   
+   //limit top 5
+   //render just the top 5
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
