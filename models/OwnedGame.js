@@ -9,7 +9,10 @@ OwnedGame.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      references: {
+        model: 'Game',
+        key: 'game_id'
+      }
     },
     title: {
       type: DataTypes.STRING,
