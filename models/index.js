@@ -40,6 +40,12 @@ Review.hasMany(ReviewComment, {
 ReviewComment.belongsTo(Review, {
     foreignKey: 'comment_id'
 });
-
+//--------------------------------
+User.hasMany(ReviewComment, {
+    foreignKey: 'comment_id'
+});
+ReviewComment.belongsTo(User, {
+    foreignKey: 'comment_id'
+})
 
 module.exports = {Game, OwnedGame, Review, ReviewComment, User}
