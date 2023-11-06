@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/user/:username', auth, async (req, res) => {
+router.get('/users/:username', auth, async (req, res) => {
   try {
       
   } catch (err) {
@@ -27,8 +27,7 @@ router.get('/user/:username', auth, async (req, res) => {
 
 router.get('/game/:game_id', async (req, res) => {
   try {
-    const gameData = await Games.findOne({game_id: req.params.game_id});
-    //sequelize.literal(`(SELECT names FROM games WHERE games.game_id = ${req.params.game_id}`);
+    const gameData = await Games.findByPk(req.params.game_id);
     res.status(200).json(gameData);
   } catch (err) {
     console.log(err);
