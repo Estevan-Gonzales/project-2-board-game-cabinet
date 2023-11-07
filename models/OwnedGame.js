@@ -5,10 +5,15 @@ class OwnedGame extends Model {}
 
 OwnedGame.init(
   {
-    game_id: {
+    owned_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true
+    },
+    game_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'games',
         key: 'game_id'
