@@ -5,14 +5,6 @@ class Games extends Model {}
 
 Games.init(
   {
-    game_rank: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    bgg_url: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
     game_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -25,7 +17,7 @@ Games.init(
     min_players: {
         type: DataTypes.INTEGER,
         allowNull: true
-      },
+    },
     max_players: {
         type: DataTypes.INTEGER,
         allowNull: true
@@ -46,14 +38,6 @@ Games.init(
         type: DataTypes.INTEGER,
         allowNull: true
     },
-    avg_rating: {
-        type: DataTypes.FLOAT,
-        allowNull: true
-    },
-    num_votes: {
-        type: DataTypes.INTEGER,
-        allowNull: true
-    },
     image_url: {
         type: DataTypes.STRING,
         allowNull: true
@@ -64,10 +48,6 @@ Games.init(
     },
     mechanic: {
         type: DataTypes.STRING,
-        allowNull: true
-    },
-    owned: {
-        type: DataTypes.INTEGER,
         allowNull: true
     },
     category: {
