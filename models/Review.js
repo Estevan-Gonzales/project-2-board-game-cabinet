@@ -15,7 +15,7 @@ Review.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'OwnedGame',
+        model: 'ownedgame',
         key: 'game_id'
       }
     },
@@ -23,11 +23,14 @@ Review.init(
       type: DataTypes.STRING,
       allowNull: false,
       references: {
-        model: 'User',
+        model: 'user',
         key: 'username',
       },
     },
-    
+    review_text: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   },
   {
     sequelize,

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-//const { gamePlaceholder, reviewPlaceholder} = require('../models');
+const { Game, Review } = require('../../models');
 const auth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/reviewPlaceholder/:id', auth, async (req, res) => {
+router.get('/review/:id', auth, async (req, res) => {
     try {
       
     } catch (err) {
@@ -22,7 +22,7 @@ router.get('/reviewPlaceholder/:id', auth, async (req, res) => {
     }
 });
 
-router.get('/gamePlaceholder/:id', auth, async (req, res) => {
+router.get('/game/:id', auth, async (req, res) => {
     try {
       
     } catch (err) {

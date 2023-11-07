@@ -11,26 +11,26 @@ ReviewComment.init(
       primaryKey: true,
       autoIncrement: true
     },
-
     commentor: {
       type: DataTypes.STRING,
       allowNull: false,
       references: {
-        model: 'User',
+        model: 'user',
         key: 'username',
       },
     },
-
     review_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'Review',
-            key: 'review_id'
-        }
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'review',
+        key: 'review_id'
+      }
+    },
+    comment_text: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
-
-
   },
   {
     sequelize,
