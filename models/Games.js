@@ -50,10 +50,6 @@ Games.init(
         type: DataTypes.FLOAT,
         allowNull: true
     },
-    geek_rating: {
-        type: DataTypes.FLOAT,
-        allowNull: true
-    },
     num_votes: {
         type: DataTypes.INTEGER,
         allowNull: true

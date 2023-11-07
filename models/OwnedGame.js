@@ -10,7 +10,7 @@ OwnedGame.init(
       allowNull: false,
       primaryKey: true,
       references: {
-        model: 'Games',
+        model: 'games',
         key: 'game_id'
       }
     },
@@ -22,7 +22,7 @@ OwnedGame.init(
       type: DataTypes.STRING,
       allowNull: false,
       references: {
-        model: 'User',
+        model: 'user',
         key: 'username',
       },
     },
