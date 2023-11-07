@@ -13,41 +13,20 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/homePlaceholder/', auth, async (req, res) => {
+router.post('/claim/', auth, async (req, res) => {
     try {
-        
+        const claimData = await OwnedGame.create({
+            game_id: req.body.game_id,
+            title: req.body.names,
+            username: req.body.username
+        });
+        res.status(200).json(claimData);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
 
-router.get('/likesPlaceholder/', auth, async (req, res) => {
-    try {
-        
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
-
-router.get('/profilePlaceholder/:username', auth, async (req, res) => {
-    try {
-      
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
-
-router.get('/reviewPlaceholder/:id', auth, async (req, res) => {
-    try {
-      
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
