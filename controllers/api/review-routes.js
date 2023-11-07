@@ -16,8 +16,9 @@ router.get('/', async (req, res) => {
 router.post('/', auth, async (req, res) => {
     try {
         const reviewData = await Review.create({
-          game_id: req.body.game_id,
-          poster: req.body.poster
+          owned_id: req.body.owned_id,
+          poster: req.body.poster,
+          review_text: req.body.review_text
         });
         res.status(200).json(reviewData);
       } catch (err) {
@@ -29,7 +30,8 @@ router.post('/comment', auth, async (req, res) => {
     try {
         const commentData = await ReviewComment.create({
           commentor: req.body.commentor,
-          review_id: req.body.review_id
+          review_id: req.body.review_id,
+          comment_text: req.body.comment_text
         });
         res.status(200).json(commentData);
       } catch (err) {
