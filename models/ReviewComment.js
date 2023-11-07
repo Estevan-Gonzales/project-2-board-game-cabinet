@@ -28,6 +28,11 @@ ReviewComment.init(
             model: 'Review',
             key: 'review_id'
         }
+    },
+
+    text: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
 
 

@@ -27,6 +27,10 @@ Review.init(
         key: 'username',
       },
     },
+    text: {
+        type: DataTypes.STRING,
+        allowNull: false
+    }
     
   },
   {

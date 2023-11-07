@@ -20,6 +20,33 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.get('/:username', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.username);
+    if(!userData) {
+      res.status(404).json({message: 'No user found with this username!'});
+      return;
+    }
+    res.status(200).json(userData);
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
+
+router.get('/', async (req, res) => {
+  try {
+    const userData = await User.findAll();
+    if(!userData) {
+      res.status(404).json({message: 'An error has occurred!'});
+      return;
+    }
+    res.status(200).json(userData);
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
+
+
 router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
