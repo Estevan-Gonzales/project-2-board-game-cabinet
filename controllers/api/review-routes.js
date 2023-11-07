@@ -1,5 +1,5 @@
 const router = require('express').Router();
-//const { gamePlaceholder, reviewPlaceholder} = require('../models');
+const { Game, Review, ReviewComment} = require('../../models');
 const auth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -13,22 +13,29 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/reviewPlaceholder/:id', auth, async (req, res) => {
+router.post('/', auth, async (req, res) => {
     try {
-      
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
+        const reviewData = await Review.create({
+          game_id: req.body.game_id,
+          poster: req.body.poster
+        });
+        res.status(200).json(reviewData);
+      } catch (err) {
+        res.status(400).json(err);
+      }
+})
 
-router.get('/gamePlaceholder/:id', auth, async (req, res) => {
+router.post('/comment', auth, async (req, res) => {
     try {
-      
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
+        const commentData = await ReviewComment.create({
+          commentor: req.body.commentor,
+          review_id: req.body.review_id
+        });
+        res.status(200).json(commentData);
+      } catch (err) {
+        res.status(400).json(err);
+      }
+})
+
 
 module.exports = router;
