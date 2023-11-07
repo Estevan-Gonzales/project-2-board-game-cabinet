@@ -62,3 +62,34 @@ header {
   .game-box:hover {
     transform: translateY(-5px);
   }
+
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 240px;
+  }
+  
+  .search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+  }
