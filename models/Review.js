@@ -11,13 +11,17 @@ Review.init(
       primaryKey: true,
       autoIncrement: true
     },
-    owned_id: {
+    game_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'ownedgame',
-        key: 'owned_id'
-      }
+        model: 'games',
+        key: 'game_id',
+      },
+    },
+    game_name: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     poster: {
       type: DataTypes.STRING,

@@ -1,9 +1,7 @@
-<section class="card">
-  <a href="/game-page/{{games.game_id}}">
+<section>
     <header>{{title}}</header>
-
     <div class="card-body">
-      <img src="{{games.image_url}}">
+      <img src="{{image_url}}">
       <ul class="list-none">
         <li>Category: {{category}}</li>
         <li>Players: {{min_players}} - {{max_players}}</li>
@@ -24,27 +22,19 @@
                   </label>
                 </div>
     </div>
-  </a>
 </section>
 
     {{#if loggedIn}}
-        <form>
+        <form class="review-form">
             <label>Leave a Review:</label>
-            <input class="form-input"type="text" id="review-content" placeholder="Leave a Review">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-            Submit
-            </button>
+            <p style="display: none" id="gameId">{{game_id}}</p>
+            <input class="form-input" type="text" id="review-content" placeholder="Leave a Review" required>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Submit</button>
         </form>
     {{/if}}
     
     <div>
-        {{#each reviews as |review|}}
-            {{> review-card}}
-        {{/each}}
-    </div>
-    
-    <div>
-        <a href="/review-page"><button>See All Reviews</button></a>
+        <a href="/api/review{{game_id}}"><button>See All Reviews</button></a>
     </div>
 
 {{#if loggedIn}}

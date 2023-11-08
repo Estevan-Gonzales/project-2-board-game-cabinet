@@ -1,31 +1,25 @@
-import {
-    Modal,
-    Ripple,
-    initTE,
-  } from "tw-elements";
-  
-  initTE({ Modal, Ripple });
+const reviewFormHandler = async (event) => {
+  event.preventDefault();
 
-  const newReviewHandler = async(event) => {
-    event.preventDefault();
+  console.log('in event');
+
+  const reviewContent = document.querySelector('#review-content').value.trim();
+  const game_id = document.querySelector('#gameId').value.trim();
+  const title = document.querySelector('<header>').value.trim();
     
-    const reviewContent = document.querySelector('#review-content').value.trim();
-    
-     if (reviewContent) {
+  if (reviewContent && game_id) {
     const response = await fetch(`/api/review`, {
-      method: 'POST',
-      body: JSON.stringify({ reviewContent }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+    method: 'POST',
+    body: JSON.stringify({ reviewContent, game_id, title }),
+    headers: {'Content-Type': 'application/json',},
     });
 
     if (response.ok) {
-      res.render('/api/reivew', {review: review_id})
+      document.location.replace(`/api/game/${game_id}`);
     } else {
       alert('Failed to create post');
     }
   }
 };
 
-document.querySelector('#review-content').addEventListener('click', newReviewHandler);
+document.querySelector('.review-form').addEventListener('submit', reviewFormHandler);
