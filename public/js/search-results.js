@@ -1,19 +1,25 @@
 const searchFormEl = document.querySelector('#search-form');
 
-function handleSearchFormSubmit(event) {
+const handleSearchFormSubmit = async(event) => {
   event.preventDefault();
 
   var searchInputVal = document.querySelector('#search-input').value;
-  var formatInputVal = document.querySelector('#format-input').value;
 
-  if (!searchInputVal) {
-    console.error('You need a search input value!');
-    return;
+  if (serachInputVal) {
+    const response = await fetch(`/api/search-routes`, {
+      method: 'POST',
+      body: JSON.stringify({ searchInputVal }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/api/search-results');
+    } else {
+      res.status(404);
+    }
   }
-
-  var queryString = './search-results.html?q=' + searchInputVal + '&format=' + formatInputVal;
-
-  location.assign(queryString);
-}
+};
 
 searchFormEl.addEventListener('submit', handleSearchFormSubmit);
