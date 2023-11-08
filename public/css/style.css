@@ -132,6 +132,16 @@ nav a:hover, .btn-no-style:hover {
   transition: transform 0.3s ease;
 }
 
+.signup-form {
+  width: 450px;
+  padding: 50px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background: #ffffff;
+  transition: transform 0.3s ease;
+}
+
 .login-form:hover {
   transform: translateY(-10px);
 }
