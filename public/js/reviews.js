@@ -21,7 +21,7 @@ import {
     });
 
     if (response.ok) {
-      res.render('/api/reivew', review_id)
+      res.render('/api/reivew', {review: review_id})
     } else {
       alert('Failed to create post');
     }
