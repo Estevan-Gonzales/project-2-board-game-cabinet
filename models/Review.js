@@ -19,6 +19,10 @@ Review.init(
         key: 'game_id',
       },
     },
+    game_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     poster: {
       type: DataTypes.STRING,
       allowNull: false,
