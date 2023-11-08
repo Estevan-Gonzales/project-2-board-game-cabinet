@@ -39,5 +39,4 @@ router.post('/comment', auth, async (req, res) => {
       }
 })
 
-
 module.exports = router;
