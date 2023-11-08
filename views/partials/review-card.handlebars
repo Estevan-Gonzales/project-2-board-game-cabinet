@@ -1,8 +1,8 @@
 <section class="card">
-    <h3><a href="/user/{{id}}">{{poster}}'s</a> review of {{game}}</h3>
+    <h3><a href="/profile/{{username}}">{{poster}}'s</a> review of {{game}}</h3>
 
     <div class="card-body">
-      <p>{{review}}</p>
+      <p>{{review_text}}</p>
 
 
 {{#if loggedIn}}
@@ -33,3 +33,4 @@
     <p><a href="/view-replies">View Replies</a></p>
 </div>
 
+<script src="./js/review-card.js"></script>

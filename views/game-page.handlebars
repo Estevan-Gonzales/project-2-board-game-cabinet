@@ -1,4 +1,20 @@
-{{> game-card}}
+<section class="card">
+  <a href="/game-page/{{games.game_id}}">
+    <header>{{title}}</header>
+
+    <div class="card-body">
+      <img src="{{games.image_url}}">
+      <ul class="list-none">
+        <li>Category: {{category}}</li>
+        <li>Players: {{min_players}} - {{max_players}}</li>
+        <li>Age: {{age}}</li>
+        <li>Time: {{min_time}} - {{max_time}}</li>
+        <li>Mechanics: {{mechanic}}</li>
+      </ul>
+    </div>
+  </a>
+</section>
+
     {{#if loggedIn}}
         <form>
             <label>Leave a Review:</label>
@@ -22,3 +38,5 @@
 {{#if loggedIn}}
  <script src="./js/reviews.js"></script>
 {{/if}}
+
+<script src="./js/game-page.js"></script>

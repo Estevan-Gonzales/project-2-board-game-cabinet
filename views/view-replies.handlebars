@@ -1,8 +1,8 @@
 <section class="card">
-    <h3><a href="/user/{{id}}">{{user}}'s</a> review of {{game}}</h3>
+    <h3><a href="/profile/{{username}}">{{user}}'s</a> review of {{game}}</h3>
 
     <div class="card-body">
-      <p>{{review}}</p>
+      <p>{{review_text}}</p>
      </div>
 </section>
 
@@ -12,7 +12,7 @@
         <h4>{{commenter}}'s reply</h4>
         
             <div class="card-body">
-                {{reply}}
+                {{comment_text}}
             </div>
         
         <div
@@ -37,3 +37,5 @@
     </div>
 
 {{/each}}
+
+<script src="./js/view-replies.js"></script>

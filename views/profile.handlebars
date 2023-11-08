@@ -44,8 +44,8 @@
     role="tabpanel"
     aria-labelledby="tabs-games-tab"
     data-te-tab-active>
-    {{#each games as |game|}}
-      {{> game-card}}
+    {{#each owned-games as |owned-game|}}
+      {{> owned-games-card}}
     {{/each}}
   </div>
   <div
