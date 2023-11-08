@@ -4,7 +4,7 @@ const newReplyHandler = async(event) => {
     const replyContent = document.querySelector('#reply-content').value.trim();
     
      if (replyContent) {
-    const response = await fetch(`/api/reply-routes`, {
+    const response = await fetch(`/api/replies/comment`, {
       method: 'POST',
       body: JSON.stringify({ replyContent }),
       headers: {
@@ -13,7 +13,7 @@ const newReplyHandler = async(event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/reply-routes/view');
+      document.location.replace('/api/replies/view');
     } else {
       alert('Failed to create reply');
     }

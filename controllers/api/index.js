@@ -5,7 +5,7 @@ const profileRoutes = require('./profile-routes');
 const searchRoutes = require('./search-routes');
 const gameRoutes = require('./game-routes');
 const reviewRoutes = require('./review-routes');
-const replyRoutes = require('./reply-routes');
+const replyRoutes = require('./review-comments-routes');
 
 router.use('/users', userRoutes);
 router.use('/profile', profileRoutes);
