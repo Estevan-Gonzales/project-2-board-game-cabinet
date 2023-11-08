@@ -15,10 +15,12 @@ router.get('/', async (req, res) => {
 
 router.post('/', auth, async (req, res) => {
     try {
+      console.log(req.session.username);
+      console.log(req.body.reviewContent);
         const reviewData = await Review.create({
-          owned_id: req.body.owned_id,
-          poster: req.body.poster,
-          review_text: req.body.review_text
+          game_id: req.body.game_id,
+          poster: req.session.username,
+          review_text: req.body.reviewContent
         });
         res.status(200).json(reviewData);
       } catch (err) {

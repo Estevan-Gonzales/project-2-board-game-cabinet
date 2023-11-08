@@ -1,11 +1,23 @@
 const router = require('express').Router();
-const { OwnedGame } = require('../../models');
+const { Games, OwnedGame } = require('../../models');
 const auth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/:game_id', async (req, res) => {
     try {
+        const gameData = await Games.findByPk(req.params.game_id);
+        console.log(gameData.names);
         res.render('game-page', {
             loggedIn: req.session.loggedIn,
+            game_id: gameData.game_id,
+            title: gameData.names,
+            image_url: gameData.image_url,
+            category: gameData.category,
+            min_players: gameData.min_players,
+            max_players: gameData.max_players,
+            age: gameData.age,
+            min_time: gameData.min_time,
+            max_time: gameData.max_time,
+            mechanic: gameData.mechanic
           });
     } catch (err) {
         console.log(err);
