@@ -1,11 +1,3 @@
-import {
-    Modal,
-    Ripple,
-    initTE,
-  } from "tw-elements";
-  
-  initTE({ Modal, Ripple });
-
 const newReviewHandler = async(event) => {
   event.preventDefault();
   console.log('in event');
