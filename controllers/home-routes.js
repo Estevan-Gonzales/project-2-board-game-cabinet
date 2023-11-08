@@ -1,14 +1,26 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Games } = require('../models');
+const { Games, OwnedGame } = require('../models');
 const auth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
   try {
+
+    const dbGameData = await Games.findAll({limit: 5
+
+  });
+
+    const games = dbGameData.map((game) =>
+      game.get({plain: true}));
+
+    console.log(games);
+
    //limit top 5
    //render just the top 5 
    res.render('homepage', {
+      games,
       loggedIn: req.session.loggedIn,
+
     });
   } catch (err) {
     console.log(err);
@@ -27,8 +39,21 @@ router.get('/users/:username', auth, async (req, res) => {
 
 router.get('/game/:game_id', async (req, res) => {
   try {
-    const gameData = await Games.findByPk(req.params.game_id);
-    res.status(200).json(gameData);
+
+    const dbGameData = await Games.findByPk(req.params.game_id);
+
+    const games = dbGameData.map((game) =>
+      game.get({plain: true}));
+
+    console.log(games);
+
+   //limit top 5
+   //render just the top 5 
+   res.render('game-page', {
+      games,
+      loggedIn: req.session.loggedIn,
+
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
