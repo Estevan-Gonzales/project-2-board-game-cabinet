@@ -26,17 +26,4 @@ router.post('/', auth, async (req, res) => {
       }
 })
 
-router.post('/comment', auth, async (req, res) => {
-    try {
-        const commentData = await ReviewComment.create({
-          commentor: req.body.commentor,
-          review_id: req.body.review_id,
-          comment_text: req.body.comment_text
-        });
-        res.status(200).json(commentData);
-      } catch (err) {
-        res.status(400).json(err);
-      }
-})
-
 module.exports = router;
