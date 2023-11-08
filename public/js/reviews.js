@@ -1,13 +1,16 @@
 const newReviewHandler = async(event) => {
   event.preventDefault();
+
   console.log('in event');
+
   const reviewContent = document.querySelector('#review-content').value.trim();
   const game_id = document.querySelector('#gameId').value.trim();
+  const title = document.querySelector('<header>').value.trim();
     
-  if (reviewContent) {
+  if (reviewContent && game_id) {
     const response = await fetch(`/api/review`, {
     method: 'POST',
-    body: JSON.stringify({ reviewContent, game_id }),
+    body: JSON.stringify({ reviewContent, game_id, title }),
     headers: {'Content-Type': 'application/json',},
     });
 
@@ -19,4 +22,4 @@ const newReviewHandler = async(event) => {
   }
 };
 
-document.querySelector('.review-form').addEventListener('submit', newReviewHandler);
+document.querySelector('.review-form').addEventListener('submit', reviewFormHandler);
