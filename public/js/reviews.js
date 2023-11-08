@@ -12,7 +12,7 @@ import {
     const reviewContent = document.querySelector('#review-content').value.trim();
     
      if (reviewContent) {
-    const response = await fetch(`/api/review-routes`, {
+    const response = await fetch(`/api/review`, {
       method: 'POST',
       body: JSON.stringify({ reviewContent }),
       headers: {
@@ -21,7 +21,7 @@ import {
     });
 
     if (response.ok) {
-      document.location.replace('/review-routes');
+      res.render('/api/reivew', {review: review_id})
     } else {
       alert('Failed to create post');
     }
