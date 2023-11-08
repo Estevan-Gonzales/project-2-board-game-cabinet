@@ -16,7 +16,8 @@
   <nav>
     <a href="/">Home</a>
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
+      <a href="/api/profile">profile</a> |
+      <button class="no-button" id="logout">logout</button>
     {{else}}
     <a href="/login">Login</a>
     {{/if}}
@@ -28,6 +29,9 @@
   <script
   type="text/javascript"
   src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
   </body>
 
   </html>
