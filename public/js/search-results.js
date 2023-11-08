@@ -3,7 +3,7 @@ const searchFormEl = document.querySelector('#search-form');
 const handleSearchFormSubmit = async(event) => {
   event.preventDefault();
 
-  var searchInputVal = document.querySelector('#search-input').value;
+  var searchInputVal = document.querySelector('#searchInput').value;
 
   if (serachInputVal) {
     const response = await fetch(`/api/search-routes`, {
