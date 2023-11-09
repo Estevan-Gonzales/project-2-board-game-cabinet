@@ -21,10 +21,12 @@ Review.belongsTo(User, {
 });
 //--------------------------------
 OwnedGame.hasOne(Games, {
-    foreignKey: 'game_id'
+    foreignKey: 'game_id',
+    sourceKey: 'game_id'
 });
 Games.belongsTo(OwnedGame, {
-    foreignKey: 'game_id'
+    foreignKey: 'game_id',
+    sourceKey: 'game_id'
 });
 //--------------------------------
 Games.hasMany(Review, {
