@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Games, OwnedGame } = require('../models');
 const auth = require('../utils/auth');
 
-router.get('/', auth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
 
     const dbGameData = await Games.findAll({limit: 5});
