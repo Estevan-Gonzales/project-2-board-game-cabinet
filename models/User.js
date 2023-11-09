@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
+require('dotenv').config();
 
 class User extends Model {
   checkPassword(loginPw) {
