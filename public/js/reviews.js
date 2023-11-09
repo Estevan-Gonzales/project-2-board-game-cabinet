@@ -4,8 +4,8 @@ const newReviewHandler = async(event) => {
   console.log('in event');
 
   const reviewContent = document.querySelector('#review-content').value.trim();
-  const game_id = document.querySelector('#gameId').value.trim();
-  const title = document.querySelector('<header>').value.trim();
+  const game_id = document.querySelector('#gameId').value;
+  const title = document.querySelector('#title').value;
     
   if (reviewContent && game_id) {
     const response = await fetch(`/api/review`, {
