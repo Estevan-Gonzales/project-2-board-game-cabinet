@@ -26,8 +26,11 @@
         <form class="review-form">
             <label>Leave a Review:</label>
             <p style="display: none" id="gameId">{{game_id}}</p>
-            <input class="form-input" type="text" id="review-content" placeholder="Leave a Review" required>
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Submit</button>
+            <p style="display: none" id="title">{{title}}</p>
+            <input class="form-input"type="text" id="review-content" placeholder="Leave a Review">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            Submit
+            </button>
         </form>
     {{/if}}
     

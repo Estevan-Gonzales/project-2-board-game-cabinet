@@ -1,4 +1,4 @@
-const reviewFormHandler = async (event) => {
+const newReviewHandler = async(event) => {
   event.preventDefault();
 
   console.log('in event');
@@ -22,4 +22,4 @@ const reviewFormHandler = async (event) => {
   }
 };
 
-document.querySelector('.review-form').addEventListener('submit', reviewFormHandler);
+document.querySelector('.review-form').addEventListener('submit', newReviewHandler);

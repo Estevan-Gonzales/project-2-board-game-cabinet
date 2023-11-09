@@ -15,7 +15,7 @@
   <nav>
     <a href="/">Home</a>
     {{#if loggedIn}}
-      <a href="/api/profile">profile</a> |
+      <a href="/api/profile">profile</a>
       <button class="no-button" id="logout">logout</button>
     {{else}}
     <a href="/login">Login</a>
@@ -30,7 +30,9 @@
   type="text/javascript"
   src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
   {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
+  <script type="text/javascript" src="/js/logout.js"></script>
+  <script type="text/javascript" src="/js/reviews.js"></script>
+  <script type="text/javascript" src="/js/game-card.js"></script>
   {{/if}}
   </body>
 
