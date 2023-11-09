@@ -6,9 +6,7 @@ const auth = require('../utils/auth');
 router.get('/', auth, async (req, res) => {
   try {
 
-    const dbGameData = await Games.findAll({limit: 5
-
-  });
+    const dbGameData = await Games.findAll({limit: 5});
 
     const games = dbGameData.map((game) =>
       game.get({plain: true}));

@@ -4,7 +4,7 @@ const newReplyHandler = async(event) => {
     const replyContent = document.querySelector('#reply-content').value.trim();
     
      if (replyContent) {
-    const response = await fetch(`/api/replies/comment`, {
+      const response = await fetch(`/api/replies/comment`, {
       method: 'POST',
       body: JSON.stringify({ replyContent }),
       headers: {
