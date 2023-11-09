@@ -1,16 +1,14 @@
 <section class="card">
-  <a href="/game-page/{{games.game_id}}">
+  <a href="/api/game/{{game_id}}">
     <header>{{title}}</header>
 
     <div class="card-body">
-      <img src="{{games.image_url}}">
       <ul class="list-none">
-        <li>Category: {{category}}</li>
-        <li>Players: {{max_players}}</li>
-        <li>Age: {{age}}</li>
-        <li>Time: {{max_time}}</li>
-        <li>Mechanics: {{mechanic}}</li>
-        <li></li>
+        <li>Category: {{game.category}}</li>
+        <li>Players: {{game.max_players}}</li>
+        <li>Age: {{game.age}}</li>
+        <li>Time: {{game.max_time}}</li>
+        <li>Mechanics: {{game.mechanic}}</li>
       </ul>
     </div>
   </a>
