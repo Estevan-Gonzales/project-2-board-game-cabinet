@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
+    <h2>Welcome, {{req.session.username}}!</h2>
   </div>
 </div>
 
@@ -44,7 +44,7 @@
     role="tabpanel"
     aria-labelledby="tabs-games-tab"
     data-te-tab-active>
-    {{#each owned-games as |owned-game|}}
+    {{#each games as |game|}}
       {{> owned-games-card}}
     {{/each}}
   </div>
@@ -57,4 +57,5 @@
       {{> review-card}}
     {{/each}}
   </div>
+  <script src="./js/search-results.js"></script>
 </div>
