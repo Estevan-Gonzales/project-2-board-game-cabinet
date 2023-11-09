@@ -28,6 +28,7 @@
         <form class="review-form">
             <label>Leave a Review:</label>
             <p style="display: none" id="gameId">{{game_id}}</p>
+            <p style="display: none" id="title">{{title}}</p>
             <input class="form-input"type="text" id="review-content" placeholder="Leave a Review">
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
             Submit
@@ -38,7 +39,3 @@
     <div>
         <a href="/api/review{{game_id}}"><button>See All Reviews</button></a>
     </div>
-
-{{#if loggedIn}}
- <script src="./js/reviews.js"></script>
-{{/if}}

@@ -1,11 +1,10 @@
 const router = require('express').Router();
-const { Games, OwnedGame } = require('../../models');
+const { Games, OwnedGame, User } = require('../../models');
 const auth = require('../../utils/auth');
 
 router.get('/:game_id', async (req, res) => {
     try {
         const gameData = await Games.findByPk(req.params.game_id);
-        console.log(gameData.names);
         res.render('game-page', {
             loggedIn: req.session.loggedIn,
             game_id: gameData.game_id,
@@ -17,7 +16,7 @@ router.get('/:game_id', async (req, res) => {
             age: gameData.age,
             min_time: gameData.min_time,
             max_time: gameData.max_time,
-            mechanic: gameData.mechanic
+            mechanic: gameData.mechanic,
           });
     } catch (err) {
         console.log(err);
@@ -25,16 +24,17 @@ router.get('/:game_id', async (req, res) => {
     }
 });
 
-router.post('/claim/', auth, async (req, res) => {
+router.post('/claim', auth, async (req, res) => {
     try {
-        if(await OwnedGame.findOne({where: {game_id: req.body.game_id, username: req.body.username}})) {
+        //TODO Some logic here to rejest request if user is NOT logged in
+        if(await OwnedGame.findOne({where: {game_id: req.body.game_id, username: req.session.username}})) {
             res.status(400).json({message: 'you already own this game!'});
         }
         else{
             const claimData = await OwnedGame.create({
                 game_id: req.body.game_id,
-                title: req.body.names,
-                username: req.body.username
+                title: req.body.title,
+                username: req.session.username,
             });
             res.status(200).json(claimData);
         }

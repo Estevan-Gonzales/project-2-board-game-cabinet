@@ -22,4 +22,4 @@ const newReviewHandler = async(event) => {
   }
 };
 
-document.querySelector('.review-form').addEventListener('submit', reviewFormHandler);
+document.querySelector('.review-form').addEventListener('submit', newReviewHandler);
