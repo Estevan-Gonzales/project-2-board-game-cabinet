@@ -1,16 +1,26 @@
 const router = require('express').Router();
 //const { gamePlaceholder, reviewPlaceholder} = require('../models');
-const { ReviewComment } = require('../../models');
+const { Review, ReviewComment } = require('../../models');
 const auth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/:review_id', async (req, res) => {
     try {
-      const commentData = await ReviewComment.findAll();
-      if(!commentData) {
+      const repliesData = await ReviewComment.findAll({where: {review_id: req.params.review_id}});
+      const replies = repliesData.map((reply) => reply.get({plain: true}));
+
+      const review = await Review.findByPk(req.params.review_id);
+
+      if(!repliesData) {
         res.status(404).json({message: 'Could not get Review Comments!'});
         return;
       }
-      res.status(200).json(commentData);
+      res.render('view-replies', {
+            replies,
+            poster: review.poster,
+            game_name: review.game_name,
+            review_text: review.review_text,
+            loggedIn: req.session.loggedIn,
+          });
     } catch (err) {
         res.status(500).json(err);
     }
