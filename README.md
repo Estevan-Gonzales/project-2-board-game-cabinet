@@ -44,6 +44,8 @@ Acceptance Criteria:
 
 Go to our [Website](https://board-game-cabinet-project-2-a7bf951a2669.herokuapp.com) and search for boardgames! You can make an account to leave reviews or comments, and to claim the board games that you own!
 
+https://github.com/Estevan-Gonzales/project-2-board-game-cabinet/assets/144481823/3d508c15-9132-446d-a1ca-a92875ce29f8
+
 ## Future Development <a name="future-development"></a>
 
 - [ ] Improve UI and Website look to make it more appealing    for users.
@@ -54,7 +56,6 @@ Go to our [Website](https://board-game-cabinet-project-2-a7bf951a2669.herokuapp.
 - [ ] Show a users written reviews, and comments on their profile.
 - [ ] Implement the search feature for users to find the games they are looking for.
 - [ ] Let users edit or delete their reviews and comments
-
 
 ## Technologies <a name="technologies"></a>
 
