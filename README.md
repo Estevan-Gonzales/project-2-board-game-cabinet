@@ -18,6 +18,11 @@ User's of BGC can search for board games, leave and read reviews for them, and c
 
 Go to our [Website](https://board-game-cabinet-project-2-a7bf951a2669.herokuapp.com) and search for boardgames! You can make an account to leave reviews or comments, and to claim the board games that you own!
 
+
+
+https://github.com/Estevan-Gonzales/project-2-board-game-cabinet/assets/144481823/3d508c15-9132-446d-a1ca-a92875ce29f8
+
+
 ## Our Githubs <a name="githubs"></a>
 
 [Laith](https://github.com/vincula1) <br>
