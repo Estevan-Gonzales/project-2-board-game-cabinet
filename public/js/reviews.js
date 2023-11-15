@@ -4,10 +4,11 @@ const newReviewHandler = async(event) => {
   console.log('in event');
 
   const reviewContent = document.querySelector('#review-content').value.trim();
-  const game_id = document.querySelector('#gameId').value;
-  const title = document.querySelector('#title').value;
+  const game_id = document.querySelector('#gameId').innerHTML;
+  const title = document.querySelector('#title').innerHTML;
     
   if (reviewContent && game_id) {
+    console.log('working')
     const response = await fetch(`/api/review`, {
     method: 'POST',
     body: JSON.stringify({ reviewContent, game_id, title }),
@@ -15,7 +16,7 @@ const newReviewHandler = async(event) => {
     });
 
     if (response.ok) {
-      document.location.replace(`/api/game/${game_id}`);
+      document.location.replace(`/api/review/${game_id}`);
     } else {
       alert('Failed to create post');
     }
